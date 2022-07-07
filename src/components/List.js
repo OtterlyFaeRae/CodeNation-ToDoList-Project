@@ -36,8 +36,8 @@ const List = () => {
 const ListItem = (props) => {
     const [toDo, setToDo] = useState(true)
     return(
-        <div className="list-item" style={toDo ? {color:"black"} : {color:"green"}}>
-            <h4>{props.task}</h4>
+        <div className="list-item">
+            <h3 style={toDo ? {color:"black"} : {color:"green"}}>{props.task}</h3>
             <Buttons toDo={toDo} setToDo={setToDo} handleClick={props.handleClick}/>
         </div>
     )
@@ -46,8 +46,8 @@ const ListItem = (props) => {
 const Buttons = ({toDo, setToDo, handleClick}) => {
     return (
         <div>
-            <button onClick={()=>{setToDo(!toDo)}}>To Do</button>
-            <button onClick={handleClick}>Delete</button>
+            <button id="to-do-button" onClick={()=>{setToDo(!toDo)}}>{toDo?"Not Done":"Done"}</button>
+            <button id="delete-button" onClick={handleClick}>Delete</button>
         </div>
     )
 }

@@ -9,7 +9,7 @@ const Form = ({handleSubmit, input, setInput}) => {
                     onChange={(e) => setInput(e.target.value)}
                 />
             </label>
-            <input type="submit"/>
+            <input id="submit" type="submit"/>
         </form>
     )
 }
